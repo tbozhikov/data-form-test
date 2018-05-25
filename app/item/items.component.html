@@ -1,0 +1,16 @@
+<StackLayout class="page">
+    <ScrollView row="0">
+        <StackLayout>
+            <Button (tap)="onBtnTap($event)" text="registeer"></Button>
+            <Button (tap)="onLoginBtnTap($event)" text="login"></Button>
+            <RadDataForm #loginFormElement [source]="loginForm" height="400">
+                <TKEntityProperty tkDataFormProperty name="email"  displayName="Email" hintText="example@progress.com" required="true" index="0">
+                    <TKPropertyEditor tkEntityPropertyEditor type="Email">
+                        <TKPropertyEditorStyle tkPropertyEditorStyle labelFontStyle="Bold"></TKPropertyEditorStyle>
+                    </TKPropertyEditor>
+                    <TKEmailValidator tkEntityPropertyValidators errorMessage="Email is not valid."></TKEmailValidator>
+                </TKEntityProperty>
+            </RadDataForm>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>
